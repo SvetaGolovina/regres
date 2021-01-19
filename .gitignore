@@ -1,0 +1,6 @@
+*.csv
+*.zip
+D*.ipynb
+ML.ipynb
+*.bat
+.ipynb_checkpoints
