@@ -33,7 +33,6 @@ import math
 import random
 
 # матрица нулей
-
 def zeros(rows, cols):
     matrix = []
     while len(matrix) < rows:
@@ -43,7 +42,6 @@ def zeros(rows, cols):
     return matrix
 
 # транспонирование матрицы
-
 def transp(matrix):
     rows = len(matrix)
     cols = len(matrix[0])
@@ -56,7 +54,6 @@ def transp(matrix):
     return transp_m
 
 #умножение матриц
-
 def mult(m1,m2):
     rows_m1 = len(m1)
     cols_m1 = len(m1[0])
@@ -79,7 +76,6 @@ def mult(m1,m2):
     return mult
 
 # проверка на квадратность
-
 def square_m(matrix):
     if len(matrix) == len(matrix[0]):
         return True
@@ -87,7 +83,6 @@ def square_m(matrix):
         return False
 
 #копирование матрицы
-
 def copy_matrix(matrix):
     rows = len(matrix)
     cols = len(matrix[0])
@@ -97,11 +92,9 @@ def copy_matrix(matrix):
     for i in range(rows):
         for j in range(rows):
             copy_of_m[i][j] = matrix[i][j]
-
     return copy_of_m
 
 #определитель
-
 def determinant(matrix, eps=0):
     if len(matrix) == 2 and len(matrix[0]) == 2:
         det = matrix[0][0] * matrix[1][1] - matrix[1][0] * matrix[0][1]
@@ -124,7 +117,6 @@ def determinant(matrix, eps=0):
     return det
 
 # проверка на вырожденность
-
 def det0_m(matrix):
     det = determinant(matrix)
     if det != 0:
@@ -133,15 +125,7 @@ def det0_m(matrix):
         return True
 
 # проверка на равенство, мб eps не пригодится
-
 def equal_m(m1,m2, eps=None):
-    """
-    Checks the equality of two matrices.
-        :param A: The first matrix
-        :param B: The second matrix
-        :param tol: The decimal place tolerance of the check
-        :return: The boolean result of the equality check
-    """
     if len(m1) != len(m2) or len(m1[0]) != len(m2[0]):
         return False
 
@@ -157,14 +141,12 @@ def equal_m(m1,m2, eps=None):
     return True
 
 #единичная матрица
-
 def identity_matrix(n):
     I = zeros_matrix(n, n)
     for i in range(n):
         I[i][i] = 1.0
 
 #обратная матрица
-
 def inv_m(matrix, eps=None):
     if not square_m(matrix):
         print('matrix must be square')
